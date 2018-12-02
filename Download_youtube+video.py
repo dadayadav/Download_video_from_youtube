@@ -8,7 +8,7 @@ import urllib.request as urllib2
 from urllib.request import urlopen
 
 
-youtube = "https://www.youtube.com/playlist?list=PL2-dafEMk2A7mu0bSksCGMJEmeddU_H4D"
+youtube = "" # put youtube playlist link that you want to download
 url = requests.get(youtube)
 page = url.text
 siraj=BeautifulSoup(page,'html.parser')
@@ -43,7 +43,7 @@ def downloadYouTube(videourl, path):
     yt.download(path)
 
 
-path = r'F:\Winter pack\Introduction to Game Development\machinelearningin3\Siraj Raval\Introduction to mathematics'
+path = r" " # add path to download tha video
 for i in range(11,len(video_link)):
     try:
         downloadYouTube(video_link[i],path)
