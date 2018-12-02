@@ -1,11 +1,4 @@
-
-# coding: utf-8
-
-# ### Scap the site link
-
-# In[33]:
-
-
+#Scap the site link
 import random
 import requests
 import urllib.request
@@ -15,17 +8,11 @@ import urllib.request as urllib2
 from urllib.request import urlopen
 
 
-# In[61]:
-
-
 youtube = "https://www.youtube.com/playlist?list=PL2-dafEMk2A7mu0bSksCGMJEmeddU_H4D"
 url = requests.get(youtube)
 page = url.text
 siraj=BeautifulSoup(page,'html.parser')
 print(siraj.prettify())
-
-
-# In[66]:
 
 
 video_link = []
@@ -37,16 +24,12 @@ for l in res:
     video_name.append(l.text)
 
 
-# In[69]:
-
 
 for i in video_link:
     print(i)
 
 
-# ### Download the video
-
-# In[70]:
+# Download the video
 
 
 import os
@@ -60,9 +43,6 @@ def downloadYouTube(videourl, path):
     yt.download(path)
 
 
-# In[84]:
-
-
 path = r'F:\Winter pack\Introduction to Game Development\machinelearningin3\Siraj Raval\Introduction to mathematics'
 for i in range(11,len(video_link)):
     try:
@@ -71,4 +51,3 @@ for i in range(11,len(video_link)):
     except RegexMatchError:
         print("video cannot be downloaded due to RegexMatchError: " + video_name[i])
         pass
-
