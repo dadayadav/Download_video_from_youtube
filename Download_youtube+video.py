@@ -11,8 +11,8 @@ from urllib.request import urlopen
 youtube = "" # put youtube playlist link that you want to download
 url = requests.get(youtube)
 page = url.text
-siraj=BeautifulSoup(page,'html.parser')
-print(siraj.prettify())
+soup=BeautifulSoup(page,'html.parser')
+print(soup.prettify())
 
 
 video_link = []
