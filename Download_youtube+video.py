@@ -44,10 +44,10 @@ def downloadYouTube(videourl, path):
 
 
 path = r" " # add path to download tha video
-for i in range(11,len(video_link)):
+for i in range(0,len(video_link)):
     try:
         downloadYouTube(video_link[i],path)
-        print("complete video: " + video_name[i])
+        print("complete video %s: " %(i+1) + video_name[i])
     except RegexMatchError:
         print("video cannot be downloaded due to RegexMatchError: " + video_name[i])
         pass
